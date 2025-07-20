@@ -1,21 +1,8 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
+require('dotenv').config();
 
-const keySchema = new mongoose.Schema({
-  key: String,
-  type: String,
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
-  expiresAt: Date
-});
-
-export const Key = mongoose.model("Key", keySchema);
-
-export const connectDB = async (uri) => {
-  await mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-  console.log("✅ MongoDB Connected");
-};
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log('Mongo Error:', err));
