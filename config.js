@@ -1,2 +1,0 @@
-export const BOT_TOKEN = "7101419361:AAH42oljHOLWERr64PJ7OYkSqDp_gBJj_cY";
-export const MONGO_URI = "mongodb+srv://oyysreejan8:r9f3q8OpBE9UdFEv@cluster0.h3mzhuz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
